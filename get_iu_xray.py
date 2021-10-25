@@ -11,19 +11,19 @@ except:
     print("path already exists")
 
 # download PNG images
-os.system("wget -P {}/ https://openi.nlm.nih.gov/imgs/collections/NLMCXR_png.tgz".format(images_path))
+# os.system("wget -P {}/ https://openi.nlm.nih.gov/imgs/collections/NLMCXR_png.tgz".format(images_path))
 
-# download reports
-os.system("wget -P {}/ https://openi.nlm.nih.gov/imgs/collections/NLMCXR_reports.tgz".format(reports_path))
+# # download reports
+# os.system("wget -P {}/ https://openi.nlm.nih.gov/imgs/collections/NLMCXR_reports.tgz".format(reports_path))
 
-# unzip
-os.system("tar -xzf {}/NLMCXR_png.tgz -C {}/".format(images_path, images_path))
-os.system("tar -xzf {}/NLMCXR_reports.tgz -C {}/".format(reports_path, reports_path))
-os.system("mv {}/ecgen-radiology/*.xml {}/".format(reports_path, reports_path))
-os.system("rm -rf {}/ecgen-radiology".format(reports_path))
+# # unzip
+# os.system("tar -xzf {}/NLMCXR_png.tgz -C {}/".format(images_path, images_path))
+# os.system("tar -xzf {}/NLMCXR_reports.tgz -C {}/".format(reports_path, reports_path))
+# os.system("mv {}/ecgen-radiology/*.xml {}/".format(reports_path, reports_path))
+# os.system("rm -rf {}/ecgen-radiology".format(reports_path))
 
-os.system("rm {}/NLMCXR_png.tgz".format(images_path))
-os.system("rm {}/NLMCXR_reports.tgz".format(reports_path))
+# os.system("rm {}/NLMCXR_png.tgz".format(images_path))
+# os.system("rm {}/NLMCXR_reports.tgz".format(reports_path))
 
 reports = os.listdir(reports_path)
 

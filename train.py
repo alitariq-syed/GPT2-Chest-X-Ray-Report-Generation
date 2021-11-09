@@ -10,7 +10,7 @@ import os
 import json
 from augmenter import augmenter
 from gpt2.gpt2_model import TFGPT2LMHeadModel
-from test import evaluate_enqueuer
+from test_file import evaluate_enqueuer
 import pandas as pd
 from glob import glob
 import shutil

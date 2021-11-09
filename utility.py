@@ -4,7 +4,7 @@ import pandas as pd
 import importlib
 import os
 from tensorflow.keras.models import model_from_json
-import efficientnet.tfkeras
+#import efficientnet.tfkeras
 from tensorflow.keras.layers import Dense, Dropout, Flatten
 from generator import AugmentedImageSequence
 from tensorflow.keras.utils import OrderedEnqueuer

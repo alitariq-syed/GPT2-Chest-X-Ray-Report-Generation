@@ -10,6 +10,8 @@ try:
 except:
     print("path already exists")
 
+###Note: on windows, manually download the files
+
 # download PNG images
 # os.system("wget -P {}/ https://openi.nlm.nih.gov/imgs/collections/NLMCXR_png.tgz".format(images_path))
 

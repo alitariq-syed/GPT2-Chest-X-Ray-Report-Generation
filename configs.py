@@ -44,7 +44,8 @@ class argHandler(dict):
 
         self.define('generator_queue_length', 24, 'The maximum number of batches in the queue to be trained on.')
 
-        self.define('ckpt_path', './checkpoints/CDGPT2/',
+        # self.define('ckpt_path', './checkpoints/CDGPT2/',
+        self.define('ckpt_path', './paper-checkpoint/',
                     'where to save the checkpoints. The path will be created if it does not exist. The system saves every epoch by default')
         self.define('continue_from_last_ckpt', True,
                     'continue training from last ckpt or not')

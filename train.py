@@ -17,6 +17,17 @@ import shutil
 
 # tf.keras.mixed_precision.experimental.set_policy('mixed_float16')
 
+#%%
+"""fix for issue: cuDNN failed to initialize"""
+physical_devices = tf.config.experimental.list_physical_devices('GPU')
+if len(physical_devices)>0:
+    tf.config.experimental.set_memory_growth(physical_devices[0], True)
+    print('...GPU set_memory_growth successfully set...')
+
+else:
+    print('...GPU set_memory_growth not set...')
+
+#%%
 FLAGS = argHandler()
 FLAGS.setDefaults()
 tf.keras.backend.set_learning_phase(1)

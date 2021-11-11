@@ -21,7 +21,7 @@ def get_evalutation_scores(hypothesis, refrences, testing_mode=False):
                 refs[0][-1] = "no"
         refrences = refs
 
-        n = NLGEval()
+        n = NLGEval(metrics_to_omit=['METEOR'],no_skipthoughts=True, no_glove=True)
         scores = n.compute_metrics(ref_list=refrences, hyp_list=hypothesis)
     else:
         scores = {"Bleu_1": bleu_score.corpus_bleu(refrences, hypothesis, weights=[1.0]),

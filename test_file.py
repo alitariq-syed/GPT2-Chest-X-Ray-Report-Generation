@@ -111,6 +111,7 @@ def evaluate_enqueuer(enqueuer, steps, FLAGS, encoder, decoder, tokenizer_wrappe
     start = time.time()
     csv_dict = {"image_path": [], "real": [], "prediction": []}
     generator = enqueuer.get()
+    count=0
     for batch in tqdm(list(range(steps))):
         images, target, img_path = next(generator)
         predicted_sentence = evaluate_full(FLAGS, encoder, decoder, tokenizer_wrapper,
@@ -129,7 +130,10 @@ def evaluate_enqueuer(enqueuer, steps, FLAGS, encoder, decoder, tokenizer_wrappe
         if write_images:
             save_output_prediction(FLAGS, img_path[0], target_sentence, predicted_sentence)
         # print('Time taken for saving image {} sec\n'.format(time.time() - t))
-
+        count+=1
+        if count==1:
+            # break
+            pass
     enqueuer.stop()
     scores = get_evalutation_scores(hypothesis, references, test_mode)
     print("{} scores: {}".format(name, scores))

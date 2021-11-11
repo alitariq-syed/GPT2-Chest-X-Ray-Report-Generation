@@ -13,3 +13,4 @@ output_images/
 *.tgz
 *.zip
 paper-checkpoint/
+outputs/

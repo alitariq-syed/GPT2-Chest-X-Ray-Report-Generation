@@ -38,7 +38,7 @@ class argHandler(dict):
         self.define('tokenizer_vocab_size', 1001,
                     'The number of words to tokinze, the rest will be set as <unk>')
         self.define('batch_size', 16, 'batch size for training and testing')
-        self.define('generator_workers', 8, 'The number of cpu workers generating batches.')
+        self.define('generator_workers', 1, '(8 default) The number of cpu workers generating batches.')
         self.define('beam_width', 7, 'The beam search width during evaluation')
         self.define('epochs_to_evaluate', 3, 'The number of epochs to train before evaluating on the test set.')
 

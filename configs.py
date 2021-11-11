@@ -37,15 +37,15 @@ class argHandler(dict):
                     'The threshold from which to detect a tag. -1 will multiply the tags embeddings according to prediction')
         self.define('tokenizer_vocab_size', 1001,
                     'The number of words to tokinze, the rest will be set as <unk>')
-        self.define('batch_size', 16, 'batch size for training and testing')
-        self.define('generator_workers', 1, '(8 default) The number of cpu workers generating batches.')
+        self.define('batch_size', 4, '(16 default) batch size for training and testing')
+        self.define('generator_workers', 4, '(8 default) The number of cpu workers generating batches.')
         self.define('beam_width', 7, 'The beam search width during evaluation')
         self.define('epochs_to_evaluate', 3, 'The number of epochs to train before evaluating on the test set.')
 
         self.define('generator_queue_length', 24, 'The maximum number of batches in the queue to be trained on.')
 
-        # self.define('ckpt_path', './checkpoints/CDGPT2/',
-        self.define('ckpt_path', './paper-checkpoint/',
+        self.define('ckpt_path', './checkpoints/CDGPT2/',
+        # self.define('ckpt_path', './paper-checkpoint/',
                     'where to save the checkpoints. The path will be created if it does not exist. The system saves every epoch by default')
         self.define('continue_from_last_ckpt', True,
                     'continue training from last ckpt or not')

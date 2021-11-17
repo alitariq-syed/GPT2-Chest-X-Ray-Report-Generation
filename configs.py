@@ -9,7 +9,7 @@ class argHandler(dict):
     def setDefaults(self):
         self.define('train_csv', './ADC_data_processed/training_set.csv',
                     'path to training csv containing the images names and the labels')
-        self.define('test_csv', './ADC_data_processed/CR_selected_dataaa_updated.csv',
+        self.define('test_csv', './ADC_data_processed/CR_selected_dataaa_updated_renamed.csv',
                     'path to testing csv containing the images names and the labels')
         self.define('all_data_csv', './ADC_data_processed/all_data.csv',
                     'path to all data csv containing the images names and the labels')

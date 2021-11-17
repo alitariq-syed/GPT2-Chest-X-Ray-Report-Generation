@@ -30,11 +30,17 @@ for file in files:
     
     try:
         ds = dcmread(folder+file,force=True)
+        ds.decompress
         arr = ds.pixel_array
-        
-        arr = arr/arr.max()
-        arr = (arr * 255.0)
-        arr=arr.astype(np.uint8)
+
+        # arr=arr.astype(np.uint8)
+        img=arr
+        # img1 = img/np.max(img)
+        if arr.dtype=='uint16':
+            img = np.asarray(img)
+            img = np.uint8(255-((img/img.max())*255))
+        else:
+            raise ValueError('image not uint16.')
     except:
         continue
     
@@ -42,6 +48,6 @@ for file in files:
     # plt.show()
     
     # plt.imsave(fname=folder+"converted_images/"+file[:-4]+".png",arr=arr)
-    im = Image.fromarray(arr)
-    im.save(fp=folder+"converted_images/"+file[:-4]+".png",arr=arr)
+    im = Image.fromarray(img)
+    im.save(fp="./converted_images/"+file[:-4]+".png",arr=arr)
     

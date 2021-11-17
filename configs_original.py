@@ -7,17 +7,17 @@ class argHandler(dict):
     __delattr__ = dict.__delitem__
     _descriptions = {'help, --h, -h': 'show this super helpful message and exit'}
     def setDefaults(self):
-        self.define('train_csv', './ADC_data_processed/training_set.csv',
+        self.define('train_csv', './IU-XRay/training_set.csv',
                     'path to training csv containing the images names and the labels')
-        self.define('test_csv', './ADC_data_processed/CR_selected_dataaa_updated.csv',
+        self.define('test_csv', './IU-XRay/testing_set.csv',
                     'path to testing csv containing the images names and the labels')
-        self.define('all_data_csv', './ADC_data_processed/all_data.csv',
+        self.define('all_data_csv', './IU-XRay/all_data.csv',
                     'path to all data csv containing the images names and the labels')
-        self.define('image_directory', './ADC_data_processed/adc_images',
+        self.define('image_directory', './IU-XRay/images',
                     'path to folder containing the patient folders which containing the images')
-        self.define('output_images_folder', './outputs/ADC_data',
+        self.define('output_images_folder', './outputs/CDGPT2',
                     'path to folder containing output images')
-        self.define('data_dir', './ADC_data_processed',
+        self.define('data_dir', './IU-XRay',
                     'path to folder containing the patient folders which containing the images')
         self.define('visual_model_name', 'fine_tuned_chexnet',
                     'path to folder containing the patient folders which containing the images')

@@ -14,3 +14,4 @@ output_images/
 *.zip
 paper-checkpoint/
 outputs/
+ADC_data_processed/adc_images

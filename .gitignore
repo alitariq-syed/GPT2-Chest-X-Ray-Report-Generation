@@ -15,4 +15,9 @@ output_images/
 paper-checkpoint/
 outputs/
 ADC_data_processed/adc_images
-ADC_data_processed/adc_images_dicom/
+ADC_data_processed/adc_images_sick/
+ADC_data_processed/adc_images_healthy/
+ADC_data_processed/adc_images_sick_dicom/
+ADC_data_processed/adc_images_healthy_dicom/
+ADC_data_processed/for refining/
+*.rar

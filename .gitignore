@@ -5,7 +5,6 @@ models/__pycache__/
 __pycache__/
 medical_word_embeddings/pubmed2018_w2v_400D.bin
 output_captions/
-checkpoints/
 train_output_captions/
 test_output_captions/
 .vs/
@@ -23,3 +22,5 @@ ADC_data_processed/for refining/
 *.rar
 *.png
 *.dcm
+*.data-00000-of-00001
+*.index

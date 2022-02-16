@@ -23,7 +23,7 @@ class CNN_Encoder(tf.keras.Model):
         self.tags_threshold = tags_threshold
         self.visual_model = Model(inputs=visual_model.input,
                                   outputs=[visual_model.output, visual_model.layers[-pop_conv_layers - 1].output],
-                                  trainable=finetune_visual_model)
+                                  trainable=finestune_visual_model)
 
     def get_visual_features(self, images):
 

@@ -122,6 +122,10 @@ if ckpt_manager.latest_checkpoint and FLAGS.continue_from_last_ckpt:
     start_epoch = int(ckpt_manager.latest_checkpoint.split('-')[-1])
     ckpt.restore(ckpt_manager.latest_checkpoint)
     print("Restored from checkpoint: {}".format(ckpt_manager.latest_checkpoint))
+    
+    optimizer = get_optimizer(FLAGS.optimizer_type, FLAGS.learning_rate)
+    print("Optimizer reset")
+
     try:
         with open(os.path.join(FLAGS.ckpt_path, 'scores.json')) as scores_file:
             scores = json.load(scores_file)

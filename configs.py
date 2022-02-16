@@ -7,17 +7,17 @@ class argHandler(dict):
     __delattr__ = dict.__delitem__
     _descriptions = {'help, --h, -h': 'show this super helpful message and exit'}
     def setDefaults(self):
-        self.define('train_csv', './IU-XRay/training_set.csv',
+        self.define('train_csv', './ADC_data_processed/train_splitted.csv',
                     'path to training csv containing the images names and the labels')
-        self.define('test_csv', './IU-XRay/testing_set.csv',
+        self.define('test_csv', './ADC_data_processed/test_splitted.csv',
                     'path to testing csv containing the images names and the labels')
-        self.define('all_data_csv', './IU-XRay/all_data.csv',
+        self.define('all_data_csv', './ADC_data_processed/all_data.csv',
                     'path to all data csv containing the images names and the labels')
-        self.define('image_directory', './IU-XRay/images',
+        self.define('image_directory', './ADC_data_processed/images',
                     'path to folder containing the patient folders which containing the images')
-        self.define('output_images_folder', './outputs/CDGPT2',
+        self.define('output_images_folder', './outputs/ADC_data',
                     'path to folder containing output images')
-        self.define('data_dir', './IU-XRay',
+        self.define('data_dir', './ADC_data_processed',
                     'path to folder containing the patient folders which containing the images')
         self.define('visual_model_name', 'fine_tuned_chexnet',
                     'path to folder containing the patient folders which containing the images')
@@ -30,7 +30,7 @@ class argHandler(dict):
 
         self.define('max_sequence_length', 200,
                     'Maximum number of words in a sentence')
-        self.define('num_epochs', 100, 'maximum number of epochs')
+        self.define('num_epochs', 50, 'maximum number of epochs')
         self.define('encoder_layers', [0.4], 'a list describing the hidden layers of the encoder. Example [10,0.4,5] will create a hidden layer with size 10 then dropout wth drop prob 0.4, then hidden layer with size 5. If empty it will connect to output nodes directly.')
         self.define('classifier_layers', [0.4], 'a list describing the hidden layers of the encoder. Example [10,0.4,5] will create a hidden layer with size 10 then dropout wth drop prob 0.4, then hidden layer with size 5. If empty it will connect to output nodes directly.')
         self.define('tags_threshold', -1,
@@ -47,7 +47,7 @@ class argHandler(dict):
         self.define('ckpt_path', './checkpoints/CDGPT2/',
         # self.define('ckpt_path', './paper-checkpoint/',
                     'where to save the checkpoints. The path will be created if it does not exist. The system saves every epoch by default')
-        self.define('continue_from_last_ckpt', True,
+        self.define('continue_from_last_ckpt', False,
                     'continue training from last ckpt or not')
         self.define('calculate_loss_after_epoch', False,
                     'if True it will calculate the train and test loss by passing over the data again and append it to losses_csv')

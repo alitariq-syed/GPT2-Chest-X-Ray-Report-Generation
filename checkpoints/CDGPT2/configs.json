@@ -1,10 +1,10 @@
 {
-    "train_csv": "./IU-XRay/training_set.csv",
-    "test_csv": "./IU-XRay/testing_set.csv",
-    "all_data_csv": "./IU-XRay/all_data.csv",
-    "image_directory": "./IU-XRay/images",
-    "output_images_folder": "./outputs/CDGPT2",
-    "data_dir": "./IU-XRay",
+    "train_csv": "./ADC_data_processed/train_splitted.csv",
+    "test_csv": "./ADC_data_processed/test_splitted.csv",
+    "all_data_csv": "./ADC_data_processed/all_data.csv",
+    "image_directory": "./ADC_data_processed/images",
+    "output_images_folder": "./outputs/ADC_data",
+    "data_dir": "./ADC_data_processed",
     "visual_model_name": "fine_tuned_chexnet",
     "finetune_visual_model": false,
     "visual_model_pop_layers": 2,
@@ -17,7 +17,7 @@
         3
     ],
     "max_sequence_length": 200,
-    "num_epochs": 100,
+    "num_epochs": 50,
     "encoder_layers": [
         0.4
     ],
@@ -32,7 +32,7 @@
     "epochs_to_evaluate": 3,
     "generator_queue_length": 24,
     "ckpt_path": "./checkpoints/CDGPT2/",
-    "continue_from_last_ckpt": true,
+    "continue_from_last_ckpt": false,
     "calculate_loss_after_epoch": false,
     "learning_rate": 0.0001,
     "optimizer_type": "Adam",

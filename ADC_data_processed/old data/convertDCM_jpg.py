@@ -14,18 +14,8 @@ from PIL import Image
 from os.path import exists
 
 
-# #selected cases:
-# tb_cases = [965,966,1874,1982]
-# covid_cases = [21,761,1669,3182]
-
-# #readCSV
-# selectedData = pd.read_csv("selectedData.csv",index_col=0)
-
-# tb_data = selectedData.loc[selectedData['Unnamed: 0.1'].isin(tb_cases)]
-# covid_cases = selectedData.loc[selectedData['Unnamed: 0.1'].isin(covid_cases)]
-
-
 folder = "./adc_images_sick_dicom/"
+
 error_files=0
 files = os.listdir(folder)
 for file in files:
